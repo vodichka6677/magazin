@@ -1,0 +1,545 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    padding: 2px 15px;
+    background-image: linear-gradient(to right top, #34332f, #2a2725, #1f1c1b, #131111, #000000);
+    align-items: center;
+    gap: 25%;
+}
+
+header nav {
+    display: flex;
+    gap: 270px;
+}
+
+header nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: double;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: gray;
+    font-size: 20px;
+}
+
+.intro .carousel-inner {
+    height: 870px;
+}
+
+.intro img {
+    height: 870px;
+}
+
+.carousel-item {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.carousel-item h1 {
+    position: absolute;
+    left: 780px;
+    top: 100px;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.glow-on-hover {
+    background: #111;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+
+
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -80%);
+}
+
+.category_title {
+    margin: 0 auto;
+
+    padding: 20px;
+}
+
+.intro {
+
+    width: 100%;
+}
+
+.carousel-item h1 {
+    font-size: 30px;
+
+}
+
+.carousel-item button {
+    font-size: 25px;
+
+}
+
+
+
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.block {
+    position: relative;
+    background-color: #111;
+    color: #fff;
+    border: 1px solid rgb(146, 148, 248);
+    font-weight: bold;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 0;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Shine эффект */
+.block::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(146, 148, 248, 0.4),
+            transparent);
+    transition: all 650ms;
+    z-index: 1;
+}
+
+/* Glow эффект */
+.block::after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    background-size: 400%;
+    filter: blur(5px);
+    opacity: 0;
+    border-radius: 10px;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 20s linear infinite;
+}
+
+.block:hover::before {
+    left: 100%;
+}
+
+.block:hover::after {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.clothes {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2px 15px;
+
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.block1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.block1 img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.clothes {
+    gap: 15px;
+}
+
+.glow-on-hover::before,
+.glow-on-hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.glow-on-hover::before {
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00,
+            #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    filter: blur(5px);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    animation: glowing 20s linear infinite;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+}
+
+.glow-on-hover:hover::before {
+    opacity: 1;
+}
+
+.glow-on-hover::after {
+    background: #111;
+}
+
+.glow-on-hover:active {
+    color: #000;
+}
+
+.glow-on-hover:active::after {
+    background: transparent;
+}
+
+h1 {
+    text-align: center;
+}
+
+.myform {
+    background-image: linear-gradient(to right top, #1a1111, #24100f, #2d0e0d, #360a09, #3f0404);
+    color: white;
+    padding: 10px 10px;
+}
+
+footer {
+    padding: 20px;
+    padding-top: 50px;
+    background-color: black;
+
+}
+
+.info img {
+    padding: 10px;
+}
+
+.info {
+    margin-left: 50px;
+
+}
+
+.infos {
+    display: flex;
+    gap: 200px;
+    color: white;
+}
+
+.info ul {
+
+    padding-left: 0;
+    margin-left: 0;
+
+}
+
+.contacts h6 {
+
+    font-size: 11px
+}
+
+.contacts ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 15px;
+
+
+}
+
+.info li {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 15px;
+
+}
+
+.oplata {
+    display: flex;
+    color: white;
+    margin-left: 50px;
+}
+
+.kartinki {
+    margin-left: 50px;
+    gap: 15px;
+}
+
+.divan {
+    position: relative;
+}
+
+.divan a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.divan img {
+    width: 100%;
+    height: 60vh;
+
+}
+.myButton button{
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+  
+  footer .infos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  footer .info,
+  footer .contacts {
+    flex: 1 1 240px;
+    min-width: 200px;
+  }
+  
+  footer .social .social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  footer .payments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+  
+  footer .payments .oplata h4 {
+    margin: 0;
+  }
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+/* ===== MARQUEE BASE STYLES ===== */
+.animate-scroll {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  .scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 1.2;
+    animation: scroll-horizontal 15s linear infinite;
+  }
+  @keyframes scroll-horizontal {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  /* ========== ВАШИ СУЩЕСТВУЮЩИЕ СТИЛИ И МЕДИА-ЗАПРОСЫ ========== */
+  @media (max-width:1500px) {
+      header { gap: 22%; padding: 10px; }
+      .intro { width: 100%; }
+      .scrolling-text { font-size: 20px; animation-duration: 15s; }
+  }
+  
+  @media (max-width:1375px) {
+      header { gap: 19%; padding: 10px; }
+      .clothes { flex-wrap: wrap; }
+      .scrolling-text { font-size: 19px; animation-duration: 16s; }
+  }
+  
+  @media (max-width:1280px) {
+      header { gap: 17%; padding: 10px; }
+      .block1 { flex-direction: column; }
+      .scrolling-text { font-size: 18px; animation-duration: 17s; }
+  }
+  
+  @media (max-width:1200px) {
+      header { gap: 12%; padding: 10px; }
+      .clothes { width: 100%; }
+      .category_title { text-align: left; }
+      .scrolling-text { font-size: 17px; animation-duration: 18s; }
+      .carousel-item img { height: 100%; }
+      .intro { height: auto; }
+      .carousel-inner, .carousel-item, .intro img { height: auto !important; }
+      .carousel-item h1 { top: 40%; }
+      .carousel-item button { top: 70%; }
+      .blocks { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width:1130px) {
+      header { gap: 10%; padding: 10px; }
+      .scrolling-text { font-size: 17px; animation-duration: 18s; }
+  }
+  
+  @media (max-width:1050px) {
+      header { gap: 6%; padding: 10px; }
+      .scrolling-text { font-size: 16px; animation-duration: 19s; }
+  }
+  
+  @media (max-width:1000px) {
+      header { flex-direction: column; gap: 15px; }
+      header nav { gap: 50px; }
+      .scrolling-text { font-size: 16px; animation-duration: 20s; }
+  }
+  
+  @media (max-width:1000px) {
+      .block1 img { max-width: 400px; }
+      .scrolling-text { font-size: 16px; animation-duration: 20s; }
+  }
+  
+  @media (max-width:876px) {
+      .clothing, .block1 { display: flex; flex-wrap: wrap; flex-direction: column; }
+      .scrolling-text { font-size: 15px; animation-duration: 21s; }
+  }
+  
+  @media (max-width:768px) {
+      .block1 img { max-width: 320px; }
+      .scrolling-text { font-size: 14px; animation-duration: 22s; }
+  }
+  
+  @media (max-width:600px) {
+      header { flex-direction: column; gap: 20px; padding: 10px; }
+      .carousel-item h1 { font-size: 22px; }
+      .carousel-item button { font-size: 17px; }
+      .clothes { grid-template-columns: repeat(1, 1fr); width: 100%; text-align: center; }
+      .carousel-item img { height: 100%; text-align: center; }
+      .scrolling-text { font-size: 13px; animation-duration: 23s; }
+  }
+  
+  @media (max-width:480px) {
+      header { flex-direction: column; gap: 20px; padding: 10px; }
+      .intro { width: 100%; }
+      .carousel-item h1 { font-size: 20px; }
+      .carousel-item button { font-size: 15px; }
+      .scrolling-text { font-size: 12px; animation-duration: 24s; }
+  }
+  
+  @media (max-width:450px) {
+      header { gap: 17px; }
+      header nav { flex-direction: column; text-align: center; gap: 18px; }
+      .carousel-item h1 { font-size: 15px; }
+      .carousel-item button { font-size: 13px; }
+      .clothes { width: 100%; }
+      .carousel-item { width: 100%; }
+      .blocks { flex-direction: column; align-items: center; }
+      .category_title { text-align: center; }
+      .scrolling-text { font-size: 11px; animation-duration: 25s; }
+  }
+  
+  @media (max-width:436px) {
+      .block1 img { max-width: 280px; width: 100%; height: auto; object-fit: contain; }
+      .block1 { display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .carousel-item h1 { font-size: 16px; top: 35%; }
+      .carousel-item button { font-size: 14px; top: 65%; }
+      .intro img { width: 100%; height: auto; object-fit: cover; }
+      .scrolling-text { font-size: 11px; animation-duration: 26s; }
+  }
+  

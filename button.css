@@ -1,0 +1,21 @@
+.twoblocks {
+    display: flex;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  .text {
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    max-width: 300px;
+  }
+  .photka {
+    flex: 1;
+    max-width: calc(100% - 300px - 20px);
+  }
+  .photka img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }

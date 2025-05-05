@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <input type="email" name="email">
+        <input type="password" name="pass">
+        <input type="checkbox" name="agree">
+        <input type="radio" name="gender" value="male"> Муж
+        <input type="radio" name="gender" value="female"> Жен
+        <select name="country">
+          <option value="ru">Россия</option>
+          <option value="us">США</option>
+        </select>
+        <textarea name="message"></textarea>
+      
+        <button type="submit">Отправить</button>
+      </form>
+</body>
+</html>
